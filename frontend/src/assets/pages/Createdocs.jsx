@@ -18,7 +18,7 @@ const Createdocs = () => {
 
   const updateDoc = async () => {
 
-    let a = await fetch('http://localhost:3000' + '/uploadDoc', {
+    let a = await fetch('https://docs-flow.onrender.com' + '/uploadDoc', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -41,7 +41,7 @@ const Createdocs = () => {
   }
 
   const fetchDoc = async () => {
-    let a = await fetch('http://localhost:3000' + '/fetchDoc', {
+    let a = await fetch('https://docs-flow.onrender.com' + '/fetchDoc', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -70,7 +70,7 @@ const Createdocs = () => {
 
   return (
     <>
-      <div className=' bg-[#F4F4F4] sticky top-0  flex items-center  md:py-2.5 md:px-12  py-1.5 px-3 justify-between'>
+      <div className=' bg-[#F4F4F4] flex items-center  md:py-2.5 md:px-12  py-1.5 px-3 justify-between'>
         <Link to='/'>
           <Logo />
         </Link>

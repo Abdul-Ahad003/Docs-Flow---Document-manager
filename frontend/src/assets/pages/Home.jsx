@@ -25,7 +25,7 @@ const Home = () => {
       setError('Please Enter title !')
     }
     else {
-      let a = await fetch('http://localhost:3000' + '/createDoc', {
+      let a = await fetch('https://docs-flow.onrender.com' + '/createDoc', {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -54,7 +54,7 @@ const Home = () => {
 
   const getAllDocs = async () => {
 
-    let a = await fetch('http://localhost:3000' + '/fetchAllDocs', {
+    let a = await fetch('https://docs-flow.onrender.com' + '/fetchAllDocs', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -18,7 +18,7 @@ const Login = () => {
   const login = async (e) => { 
 
     e.preventDefault();
-    let a = await fetch('http://localhost:3000' + '/login', {
+    let a = await fetch('https://docs-flow.onrender.com' + '/login', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -39,8 +39,8 @@ const Login = () => {
         navigate('/')
         setTimeout(() => {
           toast.success('Login Successful')
-        }, 220);
-      }, 200);
+        }, 120);
+      }, 100);
       
     }
     else{

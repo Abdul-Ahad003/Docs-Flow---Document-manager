@@ -13,7 +13,7 @@ const Navbar = ({ search, setsearch }) => {
   const [mobileSearch, setmobileSearch] = useState(false)
 
   const fetchUser = async () => {
-    let a = await fetch('http://localhost:3000' + '/fetchUser', {
+    let a = await fetch('https://docs-flow.onrender.com' + '/fetchUser', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -33,7 +33,7 @@ const Navbar = ({ search, setsearch }) => {
   }
 
   const logout = async () => {
-    let a = await fetch('http://localhost:3000' + '/fetchUser', {
+    let a = await fetch('https://docs-flow.onrender.com' + '/fetchUser', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

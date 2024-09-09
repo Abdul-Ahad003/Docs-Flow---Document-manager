@@ -21,7 +21,7 @@ const Signup = () => {
   const createUser = async (e) => {
 
     e.preventDefault();
-    let a = await fetch('http://localhost:3000' + '/signup', {
+    let a = await fetch('https://docs-flow.onrender.com' + '/signup', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -43,8 +43,8 @@ const Signup = () => {
         navigate("/login")
         setTimeout(() => {
           toast.success('Sign Up Successful')
-        }, 220);
-      }, 200);
+        }, 120);
+      }, 100);
     }
 
   }

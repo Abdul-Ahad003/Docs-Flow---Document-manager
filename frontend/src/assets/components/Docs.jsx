@@ -15,7 +15,7 @@ const Docs = ({ docs }) => {
 
   const deleteDoc = async (id) => {
 
-    let a = await fetch('http://localhost:3000' + '/deleteDoc', {
+    let a = await fetch('https://docs-flow.onrender.com' + '/deleteDoc', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
