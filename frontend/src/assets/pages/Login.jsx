@@ -31,7 +31,7 @@ const Login = () => {
     let data = await a.json()
     
     if (data.success == true){
-
+      
       localStorage.setItem("token", data.token);
       localStorage.setItem("isLoggedIn", true);
       localStorage.setItem("userId", data.userId);
