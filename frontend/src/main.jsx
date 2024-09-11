@@ -3,10 +3,10 @@ import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
-import Login from './assets/pages/Login.jsx';
-import Signup from './assets/pages/Signup.jsx';
-import Nopage from './assets/pages/Nopage.jsx';
-import Createdocs from './assets/pages/Createdocs.jsx';
+import Login from './pages/Login.jsx';
+import Signup from './pages/Signup.jsx';
+import Nopage from './pages/Nopage.jsx';
+import Createdocs from './pages/Createdocs.jsx';
 
 
 const router = createBrowserRouter([
