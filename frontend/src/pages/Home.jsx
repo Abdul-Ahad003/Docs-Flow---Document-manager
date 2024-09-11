@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
-import Docs from '../components/Docs';
+import Navbar from '../assets/components/Navbar';
+import Docs from '../assets/components/Docs';
 import toast, { Toaster } from 'react-hot-toast';
 
 const Home = () => {

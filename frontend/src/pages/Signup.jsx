@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate, Link } from 'react-router-dom';
-import Logo from '../components/Logo';
+import Logo from '../assets/components/Logo';
 import toast, { Toaster } from 'react-hot-toast';
 
 const Signup = () => {

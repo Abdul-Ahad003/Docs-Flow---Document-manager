@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
 import JoditEditor from "jodit-react";
 import { Link } from 'react-router-dom';
-import Logo from '../components/Logo';
+import Logo from '../assets/components/Logo';
 
 
 
