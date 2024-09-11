@@ -16,7 +16,7 @@ const Home = () => {
   const [search, setsearch] = useState('')
   const [isLoggedIn, setisLoggedIn] = useState(null)
 
-  
+
   const [docsdata, setdocsdata] = useState([])
 
   const createDoc = async () => {
@@ -39,7 +39,7 @@ const Home = () => {
 
       if (data.success == true) {
         setdocsdata((prevDocs) => [...prevDocs, data.newDoc])
-        
+
         setTimeout(() => {
           setShowModal(false)
           navigate(`/createDocs/${data.docsId}`)
@@ -73,12 +73,12 @@ const Home = () => {
     }
   }
 
-  
+
   const setuser = () => {
-    if (localStorage.getItem('isLoggedIn') == 'true'){
+    if (localStorage.getItem('isLoggedIn') == 'true') {
       setisLoggedIn(true)
     }
-    else{
+    else {
       setisLoggedIn(false)
     }
   }
@@ -86,16 +86,16 @@ const Home = () => {
   useEffect(() => {
     getAllDocs()
     setuser()
-  }, [docsdata,isLoggedIn])
+  }, [docsdata, isLoggedIn])
 
 
 
 
   return (
     <>
-    
-      <Navbar search={search} setsearch={setsearch} docsdata={docsdata}/>
-      <div><Toaster/></div>
+
+      <Navbar search={search} setsearch={setsearch} docsdata={docsdata} />
+      <div><Toaster /></div>
       {isLoggedIn == true && <section className=' md:px-14 px-3.5 py-2.5'>
         <div className="flex items-center justify-between md:my-6 my-5">
           <h3 className=' md:text-[26px] text-[20px] font-Averia font-bold'>All Documents</h3>
@@ -106,26 +106,38 @@ const Home = () => {
           }}> <span ><img src='./add.svg' alt='' className=' md:w-6 md:h-6 w-5 h-5' /></span> <span className=' md:text-[16px] text-[12.75px] mx-1 font-abee'>New Document</span></div>
         </div>
 
-        
-          {
-            docsdata.length !== 0 ? docsdata.filter(item => {
-              return search.toLowerCase() === '' ? item : item.title.includes(search)
+
+        {
+          docsdata.length !== 0 ? docsdata.filter(item => {
+            return search.toLowerCase() === '' ? item : item.title.includes(search)
           }).map((element, index) => {
-              if (!element || !element._id) return null;
-              return (
-                <>
-                  {/* docID={`doc-${index + 1}`} */}
+            if (!element || !element._id) return null;
+            return (
+              <>
+                {/* docID={`doc-${index + 1}`} */}
 
-                  <div key={element._id}>
-                    <Docs docs={element} />
-                  </div>
-                </>
-              )
-            }) : ""
-          }
-      </section> } 
+                <div key={element._id}>
+                  <Docs docs={element} />
+                </div>
+              </>
+            )
+          }) : ""
+        }
+      </section>}
 
-      { isLoggedIn == false && <div className=' flex justify-center items-center text-[18px] my-6 font-abee'><Link to='/login'><span className=' mx-2 font-semibold text-blue-800'>Login</span></Link> to create documents</div> }
+      {isLoggedIn == false && <div className=' flex flex-col gap-1.5 items-center text-[18px] my-6 font-abee'>
+        <div className=' flex justify-center'>
+          <Link to='/login'><span className=' mx-2 font-semibold text-blue-800'>Login</span></Link> <span>to create documents</span>
+        </div>
+        <div className=' flex justify-center '><span>or</span></div>
+        <div className=' flex flex-col gap-1 items-center '>
+          <div><Link to='/login'><span className=' mx-2 font-semibold text-blue-800'>Login</span></Link> <span>using guest account</span></div>
+          <div className=' md:text-[16px] text-[14.5px] flex flex-col items-center'>
+            <div><span className=' font-semibold'>Email:</span> <span>guestaccount700@gmail.com</span></div>
+            <div><span className=' font-semibold'>Password:</span> <span>guest0000</span></div>
+          </div>
+        </div>
+      </div>}
 
 
       {
